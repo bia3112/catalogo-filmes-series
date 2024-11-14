@@ -3,22 +3,31 @@
   <button (click)="onConsultaCatalogo()">Pesquisar</button>
 </div>
 
-<div *ngIf="filmeSerie" class="filme-serie-detalhes">
-  <h2>{{ filmeSerie?.titulo }}</h2>
-  <img [src]="filmeSerie?.poster" alt="Poster de {{ filmeSerie?.titulo }}" width="200">
-  <p><strong>Ano:</strong>{{ filmeSerie?.ano }}</p>
-  <p><strong>Classificação:</strong> {{ filmeSerie?.classificacao }}</p>
-  <p><strong>Data de Lançamento:</strong> {{ filmeSerie?.dataLancamento }}</p>
-  <p><strong>Duração:</strong> {{ filmeSerie?.tempo }}</p>
-  <p><strong>Gênero:</strong> {{ filmeSerie?.genero }}</p>
-  <p><strong>Diretor:</strong> {{ filmeSerie?.diretor }}</p>
-  <p><strong>Escritor:</strong> {{ filmeSerie?.escritor }}</p>
-  <p><strong>Sinopse:</strong> {{ filmeSerie?.sinopse }}</p>
-  <p><strong>Linguagem:</strong> {{ filmeSerie?.linguagem }}</p>
-  <p><strong>País:</strong> {{ filmeSerie?.pais }}</p>
-  <p><strong>Prêmios:</strong> {{ filmeSerie?.premios }}</p>
+<!-- Exibição de erro -->
+<div *ngIf="error" class="error-message">{{ error }}</div>
+
+<!-- Exibição da lista de filmes/series -->
+<div *ngIf="filmesSeries.length > 0">
+  <ul class="filme-list">
+    <li *ngFor="let filmeSerie of filmesSeries">
+      <h3>{{ filmeSerie.titulo }}</h3>
+      <p><strong>Ano:</strong> {{ filmeSerie.ano }}</p>
+      <img [src]="filmeSerie.poster" alt="{{ filmeSerie.titulo }}" width="100">
+      <p><strong>Classificação:</strong> {{ filmeSerie?.classificacao }}</p>
+      <p><strong>Data de Lançamento:</strong> {{ filmeSerie?.dataLancamento }}</p>
+      <p><strong>Duração:</strong> {{ filmeSerie?.tempo }}</p>
+      <p><strong>Gênero:</strong> {{ filmeSerie?.genero }}</p>
+      <p><strong>Diretor:</strong> {{ filmeSerie?.diretor }}</p>
+      <p><strong>Escritor:</strong> {{ filmeSerie?.escritor }}</p>
+      <p><strong>Sinopse:</strong> {{ filmeSerie?.sinopse }}</p>
+      <p><strong>Linguagem:</strong> {{ filmeSerie?.linguagem }}</p>
+      <p><strong>País:</strong> {{ filmeSerie?.pais }}</p>
+      <p><strong>Prêmios:</strong> {{ filmeSerie?.premios }}</p>
+    </li>
+  </ul>
 </div>
 
-<div *ngIf="error" class="error">
-  <p>{{ error }}</p>
+<!-- Caso não haja resultados -->
+<div *ngIf="filmesSeries.length === 0 && !error" class="no-results">
+  Nenhum filme ou série encontrado.
 </div>
