@@ -1,0 +1,39 @@
+/* Estilização do container principal */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espaçamento entre o input e o botão */
+  margin-top: 20px;
+}
+
+/* Estilo do campo de input */
+.search-container input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-container input[type="text"]:focus {
+  border-color: #e50914; /* Cor de destaque ao focar no campo */
+}
+
+/* Estilo do botão */
+.search-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #e50914; /* Cor principal do botão */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+  background-color: #b00611; /* Cor ao passar o mouse */
+}
