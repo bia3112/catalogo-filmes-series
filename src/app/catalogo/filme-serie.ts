@@ -1,7 +1,7 @@
 export interface FilmeSerie {
-  título: string;
+  titulo: string;
   ano: string;
-  classficacao: string;
+  classificacao: string;
   dataLancamento: string;
   tempo: string;
   genero: string;

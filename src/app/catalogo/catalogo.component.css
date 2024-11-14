@@ -37,3 +37,29 @@
 .search-container button:hover {
   background-color: #b00611; /* Cor ao passar o mouse */
 }
+
+.filme-serie-detalhes {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filme-serie-detalhes h2 {
+  color: #333;
+}
+
+.filme-serie-detalhes img {
+  margin-bottom: 15px;
+}
+
+.filme-serie-detalhes p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.error {
+  color: red;
+  margin-top: 20px;
+}
