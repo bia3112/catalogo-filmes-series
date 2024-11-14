@@ -1,9 +1,9 @@
-/* Estilização do container principal */
+/* Container principal da barra de pesquisa */
 .search-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* Espaçamento entre o input e o botão */
+  gap: 10px;
   margin-top: 20px;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .search-container input[type="text"]:focus {
-  border-color: #e50914; /* Cor de destaque ao focar no campo */
+  border-color: #e50914;
 }
 
 /* Estilo do botão */
@@ -27,7 +27,7 @@
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
-  background-color: #e50914; /* Cor principal do botão */
+  background-color: #e50914;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -35,31 +35,66 @@
 }
 
 .search-container button:hover {
-  background-color: #b00611; /* Cor ao passar o mouse */
+  background-color: #b00611;
 }
 
-.filme-serie-detalhes {
+/* Estilização da lista de filmes/séries */
+.filme-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
   margin-top: 20px;
-  padding: 20px;
+}
+
+/* Estilo de cada item da lista */
+.filme-list li {
   background-color: #f9f9f9;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
 }
 
-.filme-serie-detalhes h2 {
+.filme-list li:hover {
+  transform: translateY(-5px);
+}
+
+.filme-list h3 {
   color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
 }
 
-.filme-serie-detalhes img {
-  margin-bottom: 15px;
+.filme-list img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-.filme-serie-detalhes p {
-  font-size: 1rem;
+.filme-list p {
+  font-size: 0.9rem;
   color: #555;
+  margin: 5px 0;
 }
 
-.error {
+.filme-list p strong {
+  color: #222;
+}
+
+/* Mensagem de erro */
+.error-message {
   color: red;
+  text-align: center;
   margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Estilo para a mensagem de nenhum resultado encontrado */
+.no-results {
+  text-align: center;
+  color: #666;
+  margin-top: 20px;
+  font-style: italic;
 }

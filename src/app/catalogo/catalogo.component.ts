@@ -7,9 +7,7 @@ import {CommonModule} from '@angular/common';
 @Component({
   selector: 'app-catalogo',
   standalone: true,
-  imports: [
-    FormsModule, CommonModule
-  ],
+  imports: [FormsModule, CommonModule],
   templateUrl: './catalogo.component.html',
   styleUrl: './catalogo.component.css'
 })
@@ -25,25 +23,36 @@ export class CatalogoComponent {
   onConsultaCatalogo() {
     if (!this.titulo) {
       this.error = 'Por favor, insira um título.';
-      this.filmesSeries = []; // Limpa os resultados anteriores
+      this.filmesSeries = [];
       return;
     }
-
     this.catalogoService.consultarCatalogo(this.titulo).subscribe({
       next: (response: any) => {
-        console.log('Resposta da API:', response); // Verifica o que a API está retornando
+        console.log('Resposta da API:', response);
         if (response.Response === 'True') {
-          this.filmesSeries = response.Search; // Armazena a lista de filmes/series
-          this.error = null; // Limpa erros anteriores
+          this.filmesSeries = []; // Limpa a lista antes de adicionar novos itens
+          response.Search.forEach((item: any) => {
+            this.catalogoService.consultarDetalhes(item.imdbID).subscribe({
+              next: (detalhes) => {
+                this.filmesSeries.push(detalhes);
+                this.cdRef.detectChanges(); // Força a atualização do Angular para exibir os dados
+              },
+              error: (error) => {
+                console.log('Erro ao carregar detalhes:', error);
+                this.error = 'Erro ao carregar detalhes de um ou mais itens.';
+              }
+            });
+          });
+          this.error = null;
         } else {
-          this.filmesSeries = []; // Limpa a lista caso não haja filmes
+          this.filmesSeries = [];
           this.error = 'Nenhum filme ou série encontrado.';
         }
       },
       error: (error: any) => {
-        console.log(error); // Verifica o erro se ocorrer
+        console.log('Erro ao carregar os dados:', error);
         this.error = 'Erro ao carregar os dados. Tente novamente.';
-        this.filmesSeries = []; // Limpa resultados anteriores
+        this.filmesSeries = [];
       }
     });
   }
