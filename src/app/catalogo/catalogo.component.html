@@ -1,3 +1,5 @@
+<app-header (onNavigationToggle)="toggleExibirFavoritos($event)"></app-header>
+
 <div class="search-container">
   <input type="text" [(ngModel)]="titulo" placeholder="Digite o título do filme ou série">
   <button (click)="onConsultaCatalogo()">Pesquisar</button>
@@ -7,24 +9,8 @@
 <div *ngIf="error" class="error-message">{{ error }}</div>
 
 <!-- Exibição da lista de filmes/series -->
-<div *ngIf="filmesSeries.length > 0">
-  <ul class="filme-list">
-    <li *ngFor="let filmeSerie of filmesSeries">
-      <h3>{{ filmeSerie.titulo }}</h3>
-      <p><strong>Ano:</strong> {{ filmeSerie.ano }}</p>
-      <img [src]="filmeSerie.poster" alt="{{ filmeSerie.titulo }}" width="100">
-      <p><strong>Classificação:</strong> {{ filmeSerie?.classificacao }}</p>
-      <p><strong>Data de Lançamento:</strong> {{ filmeSerie?.dataLancamento }}</p>
-      <p><strong>Duração:</strong> {{ filmeSerie?.tempo }}</p>
-      <p><strong>Gênero:</strong> {{ filmeSerie?.genero }}</p>
-      <p><strong>Diretor:</strong> {{ filmeSerie?.diretor }}</p>
-      <p><strong>Escritor:</strong> {{ filmeSerie?.escritor }}</p>
-      <p><strong>Sinopse:</strong> {{ filmeSerie?.sinopse }}</p>
-      <p><strong>Linguagem:</strong> {{ filmeSerie?.linguagem }}</p>
-      <p><strong>País:</strong> {{ filmeSerie?.pais }}</p>
-      <p><strong>Prêmios:</strong> {{ filmeSerie?.premios }}</p>
-    </li>
-  </ul>
+<div class="lista">
+  <app-lista [filmesSeries]="filmesSeries"></app-lista>
 </div>
 
 <!-- Caso não haja resultados -->

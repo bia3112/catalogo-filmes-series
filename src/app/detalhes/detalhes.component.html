@@ -1,0 +1,17 @@
+<div class="detalhes">
+  <img [src]="filmeSerie.poster" alt="{{ filmeSerie.titulo }}" width="100">
+  <h3>{{ filmeSerie.titulo }}</h3>
+  <p><strong>Ano:</strong> {{ filmeSerie.ano }}</p>
+  <p><strong>Classificação:</strong> {{ filmeSerie.classificacao }}</p>
+  <p><strong>Data de Lançamento:</strong> {{ filmeSerie.dataLancamento }}</p>
+  <p><strong>Sinopse:</strong> {{ filmeSerie.sinopse }}</p>
+  <p><strong>Diretor:</strong> {{ filmeSerie.diretor }}</p>
+  <p><strong>Escritor:</strong> {{ filmeSerie.escritor }}</p>
+  <p><strong>Linguagem:</strong> {{ filmeSerie.linguagem }}</p>
+  <p><strong>País:</strong> {{ filmeSerie.pais }}</p>
+  <p><strong>Prêmios:</strong> {{ filmeSerie.premios }}</p>
+  <!-- Botão de favoritos -->
+  <button (click)="toggleFavorito(filmeSerie)">
+    {{ isFavorito(filmeSerie) ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos' }}
+  </button>
+</div>

@@ -1,0 +1,61 @@
+/* Estilo geral para a lista */
+.filme-list {
+  display: flex;
+  flex-wrap: wrap; /* Para que a lista se ajuste em várias linhas */
+  gap: 20px; /* Espaçamento entre os itens da lista */
+  padding: 0;
+  list-style: none; /* Remove os marcadores da lista */
+  margin: 0;
+  margin-top: 20px;
+  justify-content: center; /* Centraliza os itens */
+}
+
+/* Estilo para cada item da lista */
+.filme-list li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  width: 220px; /* Largura fixa, mas pode ser ajustada */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona animação de transição */
+}
+
+/* Efeito de hover para o item */
+.filme-list li:hover {
+  transform: translateY(-10px); /* Leve elevação ao passar o mouse */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ao passar o mouse */
+}
+
+/* Estilo para o card (componente app-card) */
+app-card {
+  display: block;
+  text-align: center;
+}
+
+/* Ajuste para o título do filme/serie */
+.filme-list li h3 {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Estilo da imagem do poster */
+.filme-list li img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+/* Estilo para o texto dentro de cada item */
+.filme-list li p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 4px 0;
+}
+
+.filme-list li p strong {
+  font-weight: bold;
+  color: #333;
+}
