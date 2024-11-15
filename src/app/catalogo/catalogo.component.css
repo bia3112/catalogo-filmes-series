@@ -1,4 +1,3 @@
-/* Container principal da barra de pesquisa */
 .search-container {
   display: flex;
   align-items: center;
@@ -7,7 +6,6 @@
   margin-top: 20px;
 }
 
-/* Estilo do campo de input */
 .search-container input[type="text"] {
   padding: 10px;
   width: 300px;
@@ -22,7 +20,6 @@
   border-color: #e50914;
 }
 
-/* Estilo do botão */
 .search-container button {
   padding: 10px 20px;
   font-size: 16px;
@@ -38,7 +35,6 @@
   background-color: #b00611;
 }
 
-/* Mensagem de erro */
 .error-message {
   color: red;
   text-align: center;
@@ -46,7 +42,6 @@
   font-weight: bold;
 }
 
-/* Estilo para a mensagem de nenhum resultado encontrado */
 .no-results {
   text-align: center;
   color: #666;

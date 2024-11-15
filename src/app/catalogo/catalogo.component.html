@@ -1,19 +1,14 @@
-<app-header (onNavigationToggle)="toggleExibirFavoritos($event)"></app-header>
-
 <div class="search-container">
   <input type="text" [(ngModel)]="titulo" placeholder="Digite o título do filme ou série">
   <button (click)="onConsultaCatalogo()">Pesquisar</button>
 </div>
 
-<!-- Exibição de erro -->
 <div *ngIf="error" class="error-message">{{ error }}</div>
 
-<!-- Exibição da lista de filmes/series -->
 <div class="lista">
   <app-lista [filmesSeries]="filmesSeries"></app-lista>
 </div>
 
-<!-- Caso não haja resultados -->
 <div *ngIf="filmesSeries.length === 0 && !error" class="no-results">
   Nenhum filme ou série encontrado.
 </div>

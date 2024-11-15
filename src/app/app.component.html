@@ -1,1 +1,13 @@
-<app-catalogo/>
+<app-header (onNavigationToggle)="toggleExibirFavoritos($event)"></app-header>
+
+<div *ngIf="!exibirFavoritos">
+  <app-catalogo [filmesSeries]="filmesSeries"></app-catalogo>
+</div>
+
+<div *ngIf="exibirFavoritos">
+  <div class="favoritos-container">
+    <app-lista [filmesSeries]="filmesSeries"></app-lista>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

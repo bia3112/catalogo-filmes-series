@@ -1,0 +1,50 @@
+h3 {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 4px 0;
+}
+
+p strong {
+  font-weight: bold;
+  color: #333;
+}
+
+.favorito-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #e50914;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+.favorito-btn:hover {
+  background-color: #e50914;
+}
+
+.favorito-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.favorito-btn:active {
+  transform: scale(0.98);
+}

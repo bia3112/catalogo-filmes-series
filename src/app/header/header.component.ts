@@ -9,10 +9,18 @@ import {Component, EventEmitter, Output} from '@angular/core';
 })
 export class HeaderComponent {
   @Output() onNavigationToggle = new EventEmitter<boolean>();
-  exibirFavoritos: boolean = false;
+  private exibirFavoritos: boolean = false;
 
-  toggleNavigation() {
+  toggleFavoritos(event: Event) {
+    event.preventDefault();
     this.exibirFavoritos = !this.exibirFavoritos;
     this.onNavigationToggle.emit(this.exibirFavoritos);
   }
+
+  exibirInicio(event: Event) {
+    event.preventDefault();
+    this.exibirFavoritos = false;
+    this.onNavigationToggle.emit(this.exibirFavoritos);
+  }
+
 }

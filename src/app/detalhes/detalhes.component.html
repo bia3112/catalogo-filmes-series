@@ -10,8 +10,8 @@
   <p><strong>Linguagem:</strong> {{ filmeSerie.linguagem }}</p>
   <p><strong>País:</strong> {{ filmeSerie.pais }}</p>
   <p><strong>Prêmios:</strong> {{ filmeSerie.premios }}</p>
-  <!-- Botão de favoritos -->
-  <button (click)="toggleFavorito(filmeSerie)">
+
+  <button class="favorito-btn" (click)="toggleFavorito(filmeSerie)">
     {{ isFavorito(filmeSerie) ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos' }}
   </button>
 </div>

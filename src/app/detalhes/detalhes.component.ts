@@ -14,19 +14,17 @@ export class DetalhesComponent {
 
   favoritos: FilmeSerie[] = [];
 
+  ngOnInit() {
+    this.favoritos = this.catalogoService.getFavoritos();
+  }
+
   constructor(private catalogoService: CatalogoService) {}
 
-  ngOnInit(): void {
-    this.favoritos = this.catalogoService.getFavoritos(); // Carrega os favoritos
-  }
-
-  // Método para adicionar/remover de favoritos
   toggleFavorito(filmeSerie: FilmeSerie) {
     this.catalogoService.toggleFavorito(filmeSerie);
-    this.favoritos = this.catalogoService.getFavoritos(); // Atualiza a lista de favoritos
+    this.favoritos = this.catalogoService.getFavoritos();
   }
 
-  // Método para verificar se o item é favorito
   isFavorito(filmeSerie: FilmeSerie): boolean {
     return this.favoritos.some((fav) => fav.titulo === filmeSerie.titulo);
   }
