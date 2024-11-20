@@ -1,15 +1,14 @@
 <header>
-  <div class="logo">
-    <h1>Catálogo de Filmes & Séries</h1>
+  <div class="header-content">
+    <div class="logo">
+      <i class="header-icon"></i>
+      <h1>Catálogo de Filmes & Séries</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" (click)="exibirInicio($event)">Início</a></li>
+        <li><a href="#" (click)="toggleFavoritos($event)">Favoritos</a></li>
+      </ul>
+    </nav>
   </div>
-  <nav>
-    <ul>
-      <li>
-        <a href="#" (click)="exibirInicio($event)">Início</a>
-      </li>
-      <li>
-        <a href="#" (click)="toggleFavoritos($event)">Favoritos</a>
-      </li>
-    </ul>
-  </nav>
 </header>
